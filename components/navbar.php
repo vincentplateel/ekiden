@@ -18,54 +18,94 @@ have a cleaner structure and mor readable component.
 It is invoked down below inside the <nav> tag.
 
 #>
-<@~ snippet navbarLinks @>
-	<# 
 
-	Let's build a pagelist including only pages that have the
-	"checkboxShowPageInNavbar" toggle checked.
 
-	#>
-	<@~ newPagelist { 
-		excludeHidden: false, 
-		match: '{ "checkboxShowPageInNavbar": "/./" }' 
-	} ~@>
-	<@ if @{ :pagelistCount } @>
-		<div class="kit-navbar__links">
-			<@ foreach in pagelist ~@>
-				<a href="@{ url }" class="kit-navbar__link <@ if @{ :current } @>kit-navbar__link--active<@ end @>">
-					@{ title }
-				</a>
-			<@~ end ~@>
-		</div>
-	<@ end @>
-<@ end ~@>
+<# 
 
-<nav class="kit-layout__navbar kit-navbar">
-	<# 
+The navbar component renders the navigation tree.
 
-	The brand element provides a home link including any HTML, SVG or text content.
-	It is very important to understand that "<@ with '/' @>@{ url }<@ end @>" is used 
-	here as href value. This is needed in order to correctly relsolve the homepage 
-	of a multilingual site like for example "/en" or "/de". The "/" refers in that context
-	to the root page of the determined language.
+#>
 
-	
+<@~ snippet isActiveNav @>
+	<@~ if @{ :current } @> current-menu-item<@ end @>
+<@~ end @>
 
-	#>
-	<a href="<@ with '/' @>@{ url }<@ end @>" class="kit-navbar__brand">
-		<# 
-		   
-		We use the content of the brand field, either on page level or global site level
-		as content for the brand element. If neither is defined, the "def" function is 
-		used to provide a default value as fallback, here the sitename.
-
-		#>
-		@{ brand | def (@{ sitename }) }
+<@~ snippet navbarLink ~@>
+	<a href="@{ url }" class="<@ isActive @>">
+		@{ title }
 	</a>
+<@~ end @>
 
-	<div class="kit-navbar__menu">
-		<@ navbarLinks @>
-		<@ search.php @>
-		<@ themeSwitcher.php @>
-	</div>
-</nav>
+<# 
+
+A navigation tree has a recursive structure that consists of a tree
+that contains nodes that can contain other trees.
+
+#>
+<@~ snippet navNode ~@>
+	<li class="<@ isActiveNav @>">
+		<@ if @{ :pagelistCount } ~@>	
+					<a href="@{ url }">
+						@{ title }
+					</a>
+				<ul class="submenu">
+					<@~ treeNav ~@>
+				</ul>
+			</details>
+		<@ else @>
+			<@ navbarLink @>
+		<@~ end ~@>
+	</li>	
+<@~ end @>
+
+<# 
+
+This defines a tree that renders child nodes of the currently iterated context.
+
+#>
+<@~ snippet treeNav ~@>
+	<@ newPagelist {
+		context: false,
+		type: 'children',
+    excludeHidden: false, 
+		match: '{ "checkboxShowPageInNavbar": "/./" }' ,
+	} ~@>
+
+	<@~ foreach in pagelist @>
+		<@~ navNode ~@>
+	<@ end ~@>
+<@~ end @>
+
+<# 
+
+This is the actual wrapping navigation snippet.
+In this component it is placed inside a details element in 
+order to create a responsive menu that converts to a dropdown
+on small devices.
+
+#>
+<@~ snippet navbarNav @>
+	<@ with '/' ~@>
+		<ul class="menu">
+			<@ if not @{ hidden } @>
+				<li><@ navbarLink @></li>	
+			<@ end @>
+			<@~ treeNav ~@>
+		</ul>
+	<@~ end @>
+<@ end @>
+
+<@~ snippet navbar ~@>
+	<@ navbarNav @>
+<@~ end ~@>
+
+<nav id="mainnav" class="mainnav">
+  <div id="logo-mobie" class="logo">
+      <a href="index.html" rel="home">
+         <img width="50px" src="/shared/logo-ekiden.png" />
+      </a>
+  </div><!-- /.logo -->
+  <@ navbar @>
+</nav><!-- /.mainnav -->
+
+

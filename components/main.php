@@ -5,7 +5,8 @@ and then invoke it a second step by using its name as statement.
 
 #>
 <@~ snippet main ~@>
-	<main class="kit-layout__main">
+
+ <main class="">
 		<# 
    
 		Now we include the "content" component.

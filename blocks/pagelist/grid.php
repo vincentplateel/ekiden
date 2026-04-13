@@ -5,50 +5,51 @@ consisting of the first found image inside the main content area and the page's 
 
 #>
 
+
+
 <@ if @{ :pagelistCount } @>
-	<section class="kit-pagelist">
-		<# 
-		
-		All pages in a defined pagelist are iterated here.
-		Pagelists can be defined using the "newPagelist" statement. 
-		An example can be found in the "pagelist.php" template in
-		the root of the repository.
-		
-		#>
-		<@ foreach in pagelist @>
-			<# 
-   
-			The ":img" variable is used in order to store the file path of the first found
-			image in the "+main" field.
+  <section class="main-content blog-posts">
+        <div class="themeflat-container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12 widget-blog-content">
+                    <div class="post-wrap">
+                        <@ foreach in pagelist @>
+                          <# 
+                      
+                          The ":img" variable is used in order to store the file path of the first found
+                          image in the "+main" field.
 
-			Note that the leading colon ":" is used to mark a variable as an internal runtime
-			variable that is not exposed to the user interface in the dashboard.
+                          Note that the leading colon ":" is used to mark a variable as an internal runtime
+                          variable that is not exposed to the user interface in the dashboard.
 
-			#>
-			<@ set { :img: @{ +main | findFirstImage | def(false) } } @>
+                          #>
+                          <@ set { :img: @{ +main | findFirstImage | def(false) } } @>
+                         
+                          <article class="entry format-standard wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="feature-post">
+                               <@ with @{ :img } { width: 500 } @>
+                                <img src="@{ :fileResized }" />
+                              <@ end @>
+                            </div><!-- /.feature-post -->
 
-			<a href="@{ url }">
-				<# 
-	   
-				The "with" statement can be used to "do something" with a file or page
-				as long it exists. So here we want to create a small preview image with a maximum
-				width of 500px. The resized image can be referenced using the ":fileResized"
-				runtime variable.
-		
-				#>
-				<@ with @{ :img } { width: 500 } @>
-					<img src="@{ :fileResized }" />
-				<@ end @>
-
-				<div><strong>@{ title }</strong></div>	
-				<#
-					
-				As preview text we can extract the first paragraph of text of the "+main"
-				field using the "findFirstParagraph" function and shorten it then to 100 characters.	
-			
-				#>
-				<p>@{ +main | findFirstParagraph | 180 }</p>
-			</a>
-		<@ end @>
-	</section>
+                            <div class="main-post">
+                               
+                                <h2 class="entry-title"><a href="@{ url }">@{ title }</a>
+                                </h2>
+                                <div class="entry-meta">
+                                  <p>@{ +main | findFirstParagraph | 180 }</p>
+                                </div>
+                                <a class="more-link" href="@{ url }">En savoir plus</a>
+                                <!-- /.entry-meta -->
+                            </div><!-- /.main-post -->
+                        </article>
+                        <@ end @>
+                 
+    
+                    </div>
+                </div><!-- /.col-md-9 -->
+             
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
 <@ end @>

@@ -1,7 +1,7 @@
 {
-  "name": "Starter Kit",
-  "description": "The Automad theme starter kit for developers",
-  "author": "Marc Anton Dahmen",
+  "name": "Ekiden",
+  "description": "An Automad theme for Ekiden",
+  "author": "Vincent Plateel",
   "license": "MIT",
   "masks": {
     "page": [],

@@ -6,12 +6,20 @@ page template is iherited by another template.
 
 #>
 <@~ snippet layout ~@>
-	<div class="kit-layout kit-layout--@{ template | sanitize }">
-		<@ navbar.php @>
-		<@ sidebar.php @>
-		<@ main.php @>
-		<@ footer.php @>
-	</div>
+  <!-- preload -->
+  <div class="preload preload-container">
+      <div class="swapping-squares-spinner">
+           <span class="loader"></span>
+      </div>
+      
+  </div>
+  <!-- /preload -->
+  <@ header.php @>
+  <@ main.php @>
+  <@ footer.php @>
+  <a class="go-top show">
+      <i class="icon-ctrl"></i>
+  </a>
 <@~ end ~@>
 
 <# 

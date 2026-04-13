@@ -11,7 +11,7 @@ we can simply redefine it after the include statement.
 <@ components/page.php @>
 
 <@~ snippet main ~@>
-	<main class="kit-layout__main">
+
 		<# 
 
 		The main content goes here. 
@@ -19,14 +19,7 @@ we can simply redefine it after the include statement.
 		#>
 		<@ components/content.php @>
 
-		<# 
-
-		Before we can render a filter menu and the actual page previews,
-		we have to define a pagelist that respects query string parameters and
-		the user's configuration.
-
-		#>	
-		<@ newPagelist {
+    <@ newPagelist {
 			type: @{ selectPagelistSubset | def (false) },
 			sort: @{ selectPagelistSort },
 			context: @{ urlPagelistContext | def (false) },
@@ -35,43 +28,37 @@ we can simply redefine it after the include statement.
 			limit: 8
 		} @>
 
-		<section class="am-block">
-			<#
+    <div class="tf-widget-events">
+        <div class="themeflat-container">
+            @{ +main }
+          <# 
 
-			The following section creates a little filter menu with clickable tags 
-			that filter the displayed pages.
+          The grid template for the page previews can also be used here to render the actual pagelist content.
 
-			#>	
-			<div class="kit-filters">
-				<a 
-					href="@{ url }"
-					<@ if not @{ ?filter } @>class="active"<@ end @>
-				>
-					All
-				</a>
-				<@ foreach in filters @>
-					<a
-						href="?filter=@{ :filter }"
-						<@ if @{ ?filter } = @{ :filter } @>class="active"<@ end @>
-					>@{ :filter }</a>
-				<@ end @>
-			</div>
+          #>
+          <@ blocks/pagelist/grid.php @>
 
-			<# 
+          <# 
+        
+          At the end we also add the pagination component.
 
-			The grid template for the page previews can also be used here to render the actual pagelist content.
+          #>
+          <@ components/pagination.php @>
+        </div>
+    </div>
 
-			#>
-			<@ blocks/pagelist/grid.php @>
+		<# 
 
-			<# 
+		Before we can render a filter menu and the actual page previews,
+		we have to define a pagelist that respects query string parameters and
+		the user's configuration.
+
+		#>	
 		
-			At the end we also add the pagination component.
 
-			#>
-			<@ components/pagination.php @>
-		</section>
-	</main>
+    
+			
+	
 <@~ end ~@>
 
 

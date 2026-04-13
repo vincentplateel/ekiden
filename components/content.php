@@ -11,43 +11,27 @@ to nicely integrate the content with the content that is provided
 by the "+main" block editor field below.
 
 #>
-<section class="am-block">
-	<h1>@{ title }</h1>
-	<@ if @{ date } or @{ tags } @>
-		<div class="kit-subtitle">
-			<# 
 
-			The next block formats a page date based on the selected format string
-			and wraps it inside a <p> tag. This way we can add the wrapping <p>
-			ONLY whenever the formatted date is NOT an empty string and therefore
-			avoid empty lines showing up under the title.
+<div class="page-title">
+    <div class="themeflat-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-title-heading">
+                    <h1 class="title">@{ title }</h1>
+                </div><!-- /.page-title-captions -->
+                <div class="breadcrumbs">
+                  <@ breadcrumbs { options } @>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><i class="icon-Arrow---Right-2"></i></li>
+                        <li><a>Our Events</a></li>
+                    </ul>
+                </div><!-- /.breadcrumbs -->
 
-			Also note the "selectPageDateFormat" variable. All variables using the 
-			"select*" prefix must have the actual option set defined inside the 
-			"theme.json" file under "options".
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div>
 
-			#>
-			@{ date | 
-				dateFormat (@{ selectPageDateFormat | def('M Y') }, @{ :lang }) | 
-				replace('/(.+)/', '<p>$1</p>') 
-			}
-		
-			<@ if @{ tags } @>
-				<p>
-					<# 
-			
-					We can iterate all page tags by using the
-					"foreach in tags" statement. ":i" is the current index
-					inside that tags array and ":tag" refers to the current tag.
-		
-					#>
-					<@ foreach in tags ~@>
-						<@ if @{ :i } > 1 @>, <@ end @>@{ :tag }
-					<@~ end @>
-				</p>
-			<@ end @>
-		</div>
-	<@ end @>
-</section>
 
-@{ +main }
+
