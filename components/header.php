@@ -30,7 +30,7 @@
             </div><!-- /.nav-wrap -->
             <div class="header-right"> 
                 <!-- LINK TO KMS INSCRIPTION -->
-                <a target="_blank" href="https://kms.fr" class="btn-contact">S'inscrire</a>
+                <a href="/inscription" class="btn-contact">S'inscrire</a>
             </div>
         </div><!-- /.header-inner -->
     </div>

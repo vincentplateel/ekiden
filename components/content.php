@@ -12,7 +12,7 @@ by the "+main" block editor field below.
 
 #>
 
-<div class="page-title">
+<div class="page-title  <@ if @{ background } @>page-@{ background }<@ end @>">
     <div class="themeflat-container">
         <div class="row">
             <div class="col-md-12">
@@ -20,18 +20,24 @@ by the "+main" block editor field below.
                     <h1 class="title">@{ title }</h1>
                 </div><!-- /.page-title-captions -->
                 <div class="breadcrumbs">
-                  <@ breadcrumbs { options } @>
+                  <@ newPagelist {
+                      type: 'breadcrumbs',
+                      excludeCurrent: false,
+                      excludeHidden: false,
+                    } @>
                     <ul>
-                        <li><a href="index.html">Homepage</a></li>
-                        <li><i class="icon-Arrow---Right-2"></i></li>
-                        <li><a>Our Events</a></li>
-                    </ul>
+                      <@ foreach in pagelist @>
+                        <@ if @{ :i } > 1 @>
+                          <li><i class="icon-Arrow---Right-2"></i></li>
+                        <@ end @>
+                        <li><a href="@{ url }">@{ title }</a></li>
+                      <@ end @>
+                  </ul>	
+                  <@ end @>
                 </div><!-- /.breadcrumbs -->
 
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div>
-
-
 

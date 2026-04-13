@@ -4,5 +4,9 @@ The entire logic and markup of the default template is located inside the "page"
 that is simply included here.
 
 #>
+
+
+<@ set { background: 'partner' } @>
 <@ components/page.php @>
+
 

@@ -26,11 +26,7 @@ consisting of the first found image inside the main content area and the page's 
                           <@ set { :img: @{ +main | findFirstImage | def(false) } } @>
                          
                           <article class="entry format-standard wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">
-                            <div class="feature-post">
-                               <@ with @{ :img } { width: 500 } @>
-                                <img src="@{ :fileResized }" />
-                              <@ end @>
-                            </div><!-- /.feature-post -->
+                           
 
                             <div class="main-post">
                                

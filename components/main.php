@@ -13,6 +13,15 @@ and then invoke it a second step by using its name as statement.
 
 		#>
 		<@ content.php @>
+    <section class="main-content blog-content-single">
+        <div class="themeflat-container">
+            <div class="row">
+                @{ +main }   
+            </div><!-- /.row -->
+
+        </div><!-- /.container -->
+    </section>
+   
 	</main>
 <@~ end ~@>
 

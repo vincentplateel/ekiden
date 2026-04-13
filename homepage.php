@@ -12,21 +12,19 @@ that is simply included here.
         <div class="tf-slider swiper-wrapper">
             <div class="tf-banner swiper-slide">
                 <div class="image-slider">
-                    <img src="/pages/accueil/bill5750.jpg" alt="image" />
+                    <img src="/shared/img-8044.jpg" alt="image" />
                     <div class="overlay"></div>
                 </div>
                 <div class="themeflat-container">
                     <div class="slide-item">
                         <div class="silde-content">
-                            <span class="flat-sub-slider">SALE UP TO 50% OFF!</span>
-                            <h1 class="flat-title-slider">Empowering Your Fitness Journey
+                            <span class="flat-sub-slider"></span>
+                            <h1 class="flat-title-slider">Réservez vos dossards
                             </h1>
-                            <p class="flat-description-slider">The platform that turns aspirations into
-                                accomplishments. Join now and unleash your potential in the world of fitness and
-                                wellness.
+                            <p class="flat-description-slider">Les inscriptions pour l'édition 2026 sont ouvertes
                             </p>
                             <div class="button">
-                                <a href="contact.html" class="flat-button">Join our club</a>
+                                <a href="/inscriptions" class="flat-button">S'inscrire</a>
                             </div>
                         </div>
                         <div class="box-events-slide">
@@ -78,22 +76,18 @@ that is simply included here.
             </div>
             <div class="tf-banner swiper-slide">
                 <div class="image-slider">
-                    <img src="/pages/accueil/bill4894.jpg" alt="image" />
+                    <img src="/shared/img-8703.jpg" alt="image" />
                     <div class="overlay"></div>
                 </div>
                 <div class="themeflat-container">
                     <div class="slide-item">
                         <div class="silde-content">
-                            <span class="flat-sub-slider">SALE UP TO 50% OFF!</span>
-                            <h1 class="flat-title-slider">Run with Passion and Purpose
+                            <h1 class="flat-title-slider">Une course unique
                             </h1>
-                            <p class="flat-description-slider">The platform that turns aspirations
-                                into
-                                accomplishments. Join now and unleash your potential in the world of fitness and
-                                wellness.
+                            <p class="flat-description-slider">Découvrez un parcours exceptionnel en plein coeur de Marseille
                             </p>
                             <div class="button">
-                                <a href="contact.html" class="flat-button">Join our club</a>
+                                <a href="/la-course/parcours" class="flat-button">Découvrir</a>
                             </div>
                         </div>
                                         <div class="box-events-slide">
@@ -152,22 +146,81 @@ that is simply included here.
         <div class="themeflat-container">
             <div class="tf-counter">
                 <div class="title-box-v2 center-title-box title-large">
-                    <h2 class="title-section wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">Prochaine édition dans...</h2>
+                    <h2 class="title-section wow fadeInUp animated animated">Prochaine édition dans...</h2>
                 </div>
                 <div class="row clock"></div>
             </div>
         </div>
     </div><!-- Widget-clock -->
+    <div class="tf-widget-partner ">
+        <div class="themeflat-container">
+            <div class="title-box title-medium center-title-box">
+                <span class="sub-title wow fadeInUp animated animated">Partenaires</span>
+                <h2 class="title-section wow fadeInUp animated animated">En collaboration avec</h2>
+            </div>
+            <div class="tf-partner">
+                <div class="sologan-logo">
+                    <a href="https://athle.fr">
+                        <img class="image-logo" src="/shared/ffa.png" alt="image logo">
+                    </a>
+                    <a href="https://www.maregionsud.fr">
+                        <img class="image-logo" src="/shared/logo-marque-region-sud.png" alt="image logo">
+                    </a>
+                    <a href="https://www.departement13.fr">
+                        <img class="image-logo" src="/shared/bouches-du-rhone-logo.png" alt="image logo">
+                    </a>
+                    <a href="https://www.marseille.fr">
+                        <img class="image-logo" src="/shared/ville-de-marseille-logo.png" alt="image logo">
+                    </a>
+                    <a href="https://baam-marseille.com">
+                        <img class="image-logo" src="/shared/logo-baam-36490569-e5d8-4c9c-8f41-dd551279e915.png.webp" alt="image logo">
+                    </a>
+                    <a href="https://www.brasseriezoumai.fr">
+                        <img class="image-logo" src="/shared/zoumai.jpg" alt="image logo">
+                    </a>
+                    <a href="https://www.hotelvillam-marseille.com">
+                        <img class="image-logo" src="/shared/villa-massilia.png" alt="image logo">
+                    </a>
+                    <a href="https://athle.fr">
+                        <img class="image-logo" src="/shared/ffa.png" alt="image logo">
+                    </a>
+                    <a href="https://www.maregionsud.fr">
+                        <img class="image-logo" src="/shared/logo-marque-region-sud.png" alt="image logo">
+                    </a>
+                    <a href="https://www.departement13.fr">
+                        <img class="image-logo" src="/shared/bouches-du-rhone-logo.png" alt="image logo">
+                    </a>
+                    <a href="https://www.marseille.fr">
+                        <img class="image-logo" src="/shared/ville-de-marseille-logo.png" alt="image logo">
+                    </a>
+                    <a href="https://baam-marseille.com">
+                        <img class="image-logo" src="/shared/logo-baam-36490569-e5d8-4c9c-8f41-dd551279e915.png.webp" alt="image logo">
+                    </a>
+                    <a href="https://www.brasseriezoumai.fr">
+                        <img class="image-logo" src="/shared/zoumai.jpg" alt="image logo">
+                    </a>
+                    <a href="https://www.hotelvillam-marseille.com">
+                        <img class="image-logo" src="/shared/villa-massilia.png" alt="image logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div><!-- Logo partner -->
 
    <div class="tf-widget-banner">
         <div class="themeflat-container">
             <div class="tf-banne-paralax">
-                <h2 class="title-banner wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">
-                    Join our running club now
-                </h2>
-                <span class="sale wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">-30%</span>
-                <img src="images/retinal/runclub.png" alt="runclub" class="wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">
-                <a href="contact.html" class="flat-button wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">Join now</a>
+               <div class="title-box-v2 center-title-box title-large">
+                    <span class="sub-title wow fadeInUp animated animated animated">Ekiden de Marseille</span>
+                    <h2 class="title-section wow fadeInUp animated animated"> La course par équipe 100% fun</h2>
+                                 <br>
+                                 <br>
+                    <a href="/la-course" class="flat-button wow fadeInUp animated animated">Découvrir</a>
+                </div>
+          
+               
+ 
+                
             </div>
         </div>
     </div>

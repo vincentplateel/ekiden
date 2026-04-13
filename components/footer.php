@@ -35,11 +35,13 @@ This is very useful in order to be able to inherit a template and just override 
                                   match: '{ "checkboxShowPageInFooter": "/./" }' 
                                 } ~@>
                                 <@ if @{ :pagelistCount} @>
-                                  <li>
+                                 
                                     <@ foreach in pagelist ~@>
+                                     <li>
                                       <a href="@{ url }">@{ title }</a>
+                                      </li>
                                     <@~ end @>
-                              </li>
+                                   
                                 <@ end @>
                             </ul><!-- /.menu -->
                         </div><!-- /.widget -->
@@ -51,8 +53,8 @@ This is very useful in order to be able to inherit a template and just override 
                             <h5 class="widget-title">Suivez-nous</h5>
                             
                                  <div class="social-icon-footer">
-                                    <a href="ttps://www.instagram.com/ekiden_de_marseille/"><i class="icon-instagram"></i></a>
-                                    <a href="https://www.facebook.com/ekidenMarseille"><i class="icon-facebook"></i></a>
+                                    <a target="_blank" href="ttps://www.instagram.com/ekiden_de_marseille/"><i class="icon-instagram"></i></a>
+                                    <a target="_blank" href="https://www.facebook.com/ekidenMarseille"><i class="icon-facebook"></i></a>
                                 </div>
                   
                         </div><!-- /.widget -->
@@ -60,13 +62,13 @@ This is very useful in order to be able to inherit a template and just override 
 
                 </div><!-- /.row -->
                 <div class="row footer-bottom">
-                    <div class="col-md-6 col-sm-12">
+                    
+                    <div class="col-12 text-center">
                         <div class="copyright">
-                            <p><a href="index.html" target="_blank">Ekiden de Marseille</a> © 2026 
+                            <p><a href="/">Ekiden de Marseille</a> © 2026 
                             </p>
                         </div>
-                    </div><!-- /.col-md-6 -->
-                    
+                    </div>
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </div><!-- /.footer-widgets -->
