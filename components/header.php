@@ -18,7 +18,7 @@
         <div class="header-inner">
             <div id="logo" class="logo">
                 <a href="/" rel="home">
-                    <img width="50px" src="/shared/logo-ekiden.png" />
+                    <img width="175px" src="/shared/logo-ekiden-h.png" />
                 </a>
             </div><!-- /.logo -->
             <div class="nav-wrap">
